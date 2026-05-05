@@ -61,14 +61,10 @@ const HeaderActions = ({
 
     if (id === "favorite") return router.push(`/${locale}/wishlist`);
 
-    if (id === "profile")
+    if (id === "profile") {
       return id_token
         ? router.push(`/${locale}/profile/info`)
         : toggleModal(MODALS.LOGIN);
-
-    if (id === "favorite") {
-      router.push(`/${locale}/wishlist`);
-      return;
     }
   };
 

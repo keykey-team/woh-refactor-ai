@@ -1,8 +1,5 @@
-import OrderItem from "@entities/order-item/ui/OrderItem";
-import { getCurrentUser } from "@shared/api/authServices";
-import { getUserOrders } from "@shared/api/orderServices";
-import { getMessages } from "@shared/i18n/getMessages";
-import { createI18nServer } from "@shared/i18n/server";
+import OrderItem from "@entities/order-item";
+import { createI18nServer, getCurrentUser, getMessages, getUserOrders } from "@shared";
 import { cookies } from "next/headers";
 import Link from "next/link";
 
@@ -15,7 +12,7 @@ export default async function HistoryPage({
 
     const cookieStore = await cookies();
     const token = cookieStore.get("auth_token");
-    const user = await getCurrentUser(token.value)
+    await getCurrentUser(token.value);
     const orders = await getUserOrders(token.value)
     const normalizedOrders = Array.isArray(orders) ? orders : [];
    

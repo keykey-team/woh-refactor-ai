@@ -119,6 +119,11 @@ export {
   getSaleCatalogCards,
 } from "./api/productsServices";
 export {
+  createAuthorizedCheckout,
+  createGuestCheckout,
+  getUserOrders,
+} from "./api/orderServices";
+export {
   createReview,
   fetchProductReviews,
   reviewsApiBaseUrl,

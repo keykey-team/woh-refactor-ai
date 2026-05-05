@@ -6,7 +6,7 @@ import {
   getMessages,
 } from "@shared";
 
-import WishlistPage from "views/wishlist-page";
+import WishlistPage from "@pages/wishlist";
 
 import Footer from "@widgets/Footer";
 

@@ -1,12 +1,12 @@
-import UserDetailsForm from "@features/user-details/ui/UserDetailsForm";
-import { getCurrentUser } from "@shared/api/authServices";
+import UserDetailsForm from "@features/user-details";
 import {
     createI18nServer,
     getAllCategory,
+    getCurrentUser,
     getLocalizedFooter,
     getMessages,
+    PageHeader,
 } from "@shared";
-import PageHeader from "@shared/ui/PageHeader";
 import Footer from "@widgets/Footer";
 import { cookies } from "next/headers";
 

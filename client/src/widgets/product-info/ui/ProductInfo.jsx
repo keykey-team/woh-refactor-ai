@@ -5,17 +5,17 @@ import {
   ProductPrice,
 } from "@entities/product";
 import { useI18n } from "@shared";
-import CartButton from "@features/cart-buttons/ui/CartButton";
+import CartButton from "@features/cart-buttons";
 import Counter from "@features/counter";
 import {
   getOfferCrossPrice,
   getOfferUnitPrice,
-} from "@shared/lib/offerPrice";
-import { pickLocalizedString } from "@shared/lib/pickLocalized";
+  pickLocalizedString,
+} from "@shared";
 import {
   colorPresetValueToHex,
   isPdpColorSwatchAxis,
-} from "@widgets/product-info/lib/colorSwatchAxis";
+} from "../lib/colorSwatchAxis";
 import {
   axisOptionHasPurchasableOffer,
   buildOptionKey,
@@ -28,7 +28,7 @@ import {
   resolveSelectionAfterAxisChange,
   stringifyOptionPart,
   valuesForAxis,
-} from "@widgets/product-info/lib/pdpVariations";
+} from "../lib/pdpVariations";
 import { buildAccessoryCartLines } from "../lib/resolveAccessoryCartLines";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 

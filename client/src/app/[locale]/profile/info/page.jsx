@@ -1,7 +1,5 @@
-import UserDetailsForm from "@features/user-details/ui/UserDetailsForm";
-import { getCurrentUser } from "@shared/api/authServices";
-import { getMessages } from "@shared/i18n/getMessages";
-import { createI18nServer } from "@shared/i18n/server";
+import UserDetailsForm from "@features/user-details";
+import { createI18nServer, getCurrentUser, getMessages } from "@shared";
 import { cookies } from "next/headers";
 
 export default async function ProfilePage({

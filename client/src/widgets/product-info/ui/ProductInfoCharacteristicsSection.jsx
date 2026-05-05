@@ -3,7 +3,7 @@
 import {
   formatCharacteristicLabel,
   formatCharacteristicValue,
-} from "@widgets/product-info/lib/formatCharacteristics";
+} from "../lib/formatCharacteristics";
 
 export default function ProductInfoCharacteristicsSection({
   specRows,

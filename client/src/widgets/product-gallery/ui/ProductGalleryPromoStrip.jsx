@@ -3,7 +3,7 @@
 import {
   getOfferDiscountBadgeDisplay,
   getOfferMarketingTagLabels,
-} from "@entities/product/model/offerPromo";
+} from "@entities/product";
 import { useMemo } from "react";
 
 export default function ProductGalleryPromoStrip({ activeOffer, locale }) {

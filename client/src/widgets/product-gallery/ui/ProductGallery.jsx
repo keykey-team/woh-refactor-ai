@@ -4,10 +4,8 @@ import "swiper/css";
 import "yet-another-react-lightbox/styles.css";
 
 import WishlistButton from "@features/toggle-wishlist";
-import { useI18n } from "@shared";
-import { BREAKPOINTS } from "@shared/config/BREAKPOINTS";
-import { pickLocalizedString } from "@shared/lib/pickLocalized";
-import { computeGallerySlides } from "@widgets/product-gallery/lib/computeGallerySlides";
+import { BREAKPOINTS, pickLocalizedString, useI18n } from "@shared";
+import { computeGallerySlides } from "../lib/computeGallerySlides";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";

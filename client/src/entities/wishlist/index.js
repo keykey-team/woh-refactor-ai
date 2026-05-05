@@ -12,3 +12,4 @@ export {
   toggleWishlistAsync,
 } from "./model/slice/wishlistSlice";
 export { default } from "./model/slice/wishlistSlice";
+export { useWishlistItems } from "./model/useWishlistItems";
