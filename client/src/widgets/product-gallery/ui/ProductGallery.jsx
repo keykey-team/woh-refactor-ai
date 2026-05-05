@@ -3,7 +3,7 @@
 import "swiper/css";
 import "yet-another-react-lightbox/styles.css";
 
-import WishlistButton from "@features/wish-buttons";
+import WishlistButton from "@features/toggle-wishlist";
 import { useI18n } from "@shared";
 import { BREAKPOINTS } from "@shared/config/BREAKPOINTS";
 import { pickLocalizedString } from "@shared/lib/pickLocalized";

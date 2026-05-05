@@ -3,7 +3,7 @@
 import ProductItem from "@entities/product";
 import CartButton from "@features/cart-buttons";
 import Counter from "@features/counter";
-import WishlistButton from "@features/wish-buttons";
+import WishlistButton from "@features/toggle-wishlist";
 import { normalizeCatalogCardForProductItem } from "@shared";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";

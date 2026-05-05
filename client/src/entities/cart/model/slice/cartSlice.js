@@ -1,19 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { CART_MIN_QUANTITY, getOfferUnitPrice } from "@shared";
 import Cookies from "js-cookie";
 
-import { getOfferUnitPrice } from "../../../lib/offerPrice";
 import {
   deleteIamUserCartLine,
   fetchIamUserCart,
   mergeGuestCartLinesWithPost,
   patchIamUserCartQty,
   postIamUserCartAdd,
-} from "../api/iamUserCart";
+} from "../../api/iamUserCart";
 import {
   markGuestCartMerged,
   shouldMergeGuestCart,
-} from "./cartMergeSession";
-import { formatIamCartLines } from "./formatIamCartLines";
+} from "../lib/cartMergeSession";
+import { formatIamCartLines } from "../lib/formatIamCartLines";
 
 const loadCartFromStorage = () => {
   if (typeof window === "undefined") return [];
@@ -50,8 +50,10 @@ function buildMergePayloadFromLocal(localLines) {
     }
     const id = String(offerId);
     const qty = Math.max(
-      1,
-      Math.floor(Number(line?.quantityInCart ?? line?.qty ?? 1)) || 1,
+      CART_MIN_QUANTITY,
+      Math.floor(
+        Number(line?.quantityInCart ?? line?.qty ?? CART_MIN_QUANTITY),
+      ) || CART_MIN_QUANTITY,
     );
     const prev = byOffer.get(id) ?? 0;
     byOffer.set(id, Math.max(prev, qty));

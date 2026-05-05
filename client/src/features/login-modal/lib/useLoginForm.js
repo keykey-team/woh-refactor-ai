@@ -1,5 +1,6 @@
 "use client"
-import { getCartData, getWishlistData } from "@shared";
+import { getCartData } from "@entities/cart";
+import { getWishlistData } from "@entities/wishlist";
 import { loginUser } from '@shared/api/authServices';
 import { MODALS } from '@shared/config/modals';
 import { useI18n } from '@shared/i18n/use-i18n';

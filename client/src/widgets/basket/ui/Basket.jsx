@@ -3,9 +3,8 @@
 import ProductItem from "@entities/product";
 import Counter from "@features/counter";
 import RemoveFromCartButton from "@features/remove-from-cart";
-import { clearCartAsync, formatPrice, useI18n } from "@shared";
-import { MODALS } from "@shared/config/modals";
-import { CloseBtn, useModals } from "@shared/index";
+import { clearCartAsync } from "@entities/cart";
+import { CloseBtn, formatPrice, MODALS, useI18n, useModals } from "@shared";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";

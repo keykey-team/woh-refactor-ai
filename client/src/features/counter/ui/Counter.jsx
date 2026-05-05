@@ -7,7 +7,7 @@ import {
 import {
   decrementQuantityAsync,
   incrementQuantityAsync,
-} from "@shared";
+} from "@entities/cart";
 import { useDispatch } from "react-redux";
 
 const Counter = ({ prod, value, onIncrement, onDecrement, min = 1, max }) => {

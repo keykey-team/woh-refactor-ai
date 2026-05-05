@@ -1,5 +1,5 @@
+import AppProviders from "../providers";
 import {
-  AppProviders,
   getAllCategory,
   getMessages,
   i18n,

@@ -7,13 +7,14 @@ export default function ToggleWishlistButtonView({
   ariaLabel,
   buttonBusy,
   onClick,
+  className = "",
 }) {
   return (
     <button
       type="button"
       className={`product-item__favorite ${
         isActive ? "active" : ""
-      }`}
+      } ${className}`.trim()}
       aria-label={ariaLabel}
       aria-busy={buttonBusy}
       disabled={buttonBusy}

@@ -1,4 +1,4 @@
-import { removeFromCartAsync } from "@shared";
+import { removeFromCartAsync } from "@entities/cart";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 

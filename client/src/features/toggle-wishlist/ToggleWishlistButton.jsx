@@ -9,6 +9,7 @@ export default function ToggleWishlistButton({
   isActive,
   onToggle,
   ariaLabel = "Додати в обране",
+  className = "",
 }) {
   const { derivedIsActive, buttonBusy, handleClick } =
     useToggleWishlistButton({
@@ -24,6 +25,7 @@ export default function ToggleWishlistButton({
       ariaLabel={ariaLabel}
       buttonBusy={buttonBusy}
       onClick={handleClick}
+      className={className}
     />
   );
 }

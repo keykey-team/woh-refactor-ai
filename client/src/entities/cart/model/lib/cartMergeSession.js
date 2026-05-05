@@ -15,6 +15,7 @@ export function markGuestCartMerged(token) {
   try {
     sessionStorage.setItem(STORAGE_KEY, String(token));
   } catch {
+    // no-op: sessionStorage may be unavailable
   }
 }
 
@@ -22,5 +23,6 @@ export function resetCartMergeSession() {
   try {
     sessionStorage.removeItem(STORAGE_KEY);
   } catch {
+    // no-op: sessionStorage may be unavailable
   }
 }

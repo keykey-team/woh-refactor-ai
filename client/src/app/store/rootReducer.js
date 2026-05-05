@@ -1,5 +1,5 @@
-import cartReducer from '@features/cart';
-import wishlistReducer from '@features/wishlist';
+import cartReducer from '@entities/cart';
+import wishlistReducer from '@entities/wishlist';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({

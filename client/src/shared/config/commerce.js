@@ -1,0 +1,2 @@
+export const CART_MIN_QUANTITY = 1;
+export const WISHLIST_CLICK_DEBOUNCE_MS = 400;
