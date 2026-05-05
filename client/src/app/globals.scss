@@ -1,0 +1,70 @@
+// shared
+@import "../shared/ui/styles/variables.scss";
+@import "../shared/ui/styles/utilities.scss";
+@import "../shared/ui/styles/reset.scss";
+@import "../shared/ui/styles/productsLayout.scss";
+@import "../shared/ui/pageHeader.scss";
+
+// views
+@import "../views/home-page/ui/aboutUs.scss";
+@import "../views/home-page/ui/contentHub.scss";
+@import "../views/home-page/ui/principles.scss";
+@import "../views/home-page/ui/infoBlock.scss";
+@import "../views/catalog-page/ui/catalogView.scss";
+@import "../views/catalog-page/ui/catalogDescription.scss";
+@import "../views/product-page/ui/ProductBenefits.scss";
+@import "../views/product-page/ui/pdp.scss";
+@import "../views/wishlist-page/ui/wishlistPage.scss";
+@import "../views/not-found-page/ui/notFoundPage.scss";
+@import "../views/order-page/ui/orderPage.scss";
+@import "../views/contacts-page/ui/contactsPage.scss";
+@import "../views/cooperation-page/ui/cooperationPage.scss";
+@import "../views/cooperation-page/ui/cooperationWhyUs.scss";
+@import "../views/cooperation-page/ui/cooperationRequirements.scss";
+@import "../views/cooperation-page/ui/cooperationCta.scss";
+
+// widgets
+@import "../widgets/Header/ui/header.scss";
+@import "../widgets/hero/ui/hero.scss";
+@import "../widgets/catalog-carousel/ui/CatalogCarousel.scss";
+@import "../widgets/sale-carousel/ui/SaleCarousel.scss";
+@import "../widgets/burger-menu/ui/burgerMenu.scss";
+@import "../widgets/brad-crumps/ui/breadcrumbs.scss";
+@import "../widgets/products-grid/ui/productsGrid.scss";
+@import "../widgets/catalog-page-skeleton/ui/catalogPageSkeleton.scss";
+@import "../widgets/popular-products/ui/popularProducts.scss";
+@import "../widgets/recommended-products/ui/recommendedProducts.scss";
+@import "../widgets/look-set/ui/lookSet.scss";
+@import "../widgets/review-swiper/ui/reviewSwiper.scss";
+@import "../widgets/product-info/ui/productInfo.scss";
+@import "../widgets/product-gallery/ui/productGallery.scss";
+@import "../widgets/viewed-products/ui/viewedProducts.scss";
+@import "../widgets/Footer/ui/footer.scss";
+@import "../widgets/basket/ui/basket.scss";
+@import "../widgets/profile/ui/prodileSidebar.scss";
+@import "../widgets/auth-modal/ui/authModal.scss";
+
+// features
+@import "../features/language-switcher/style/languageDropdown.scss";
+@import "../features/floating/ui/floating.scss";
+@import "../features/catalog-filter/ui/filters.scss";
+@import "../features/search-modal/ui/searchModal.scss";
+@import "../features/priceRange/ui/priceRange.scss";
+@import "../features/Sort/ui/sort.scss";
+@import "../features/catalog-pagination/ui/catalogPagination.scss";
+@import "../features/search-results-preview/ui/SearchResultsPreview.scss";
+@import "../features/counter/ui/counter.scss";
+@import "../features/review/ui/writeReviewModal.scss";
+@import "../features/review/ui/submitReviewButton.scss";
+@import "../features/review-counter/ui/reviewCounter.scss";
+@import "../features/write-review/ui/writeReviewButton.scss";
+@import "../features/user-details/ui/userDetailsForm.scss";
+@import "../features/order-status/ui/orderStatus.scss";
+
+
+
+// entities
+@import "../entities/product/ui/productItem.scss";
+@import "../entities/review-card/ui/reviewCard.scss";
+@import "../entities/order-item/ui/orderItem.scss";
+

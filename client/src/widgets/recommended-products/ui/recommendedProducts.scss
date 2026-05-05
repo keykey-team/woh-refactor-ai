@@ -1,0 +1,151 @@
+.recommended-products {
+  padding-top: $catalog-recommended-gap-top;
+  margin-bottom: 92px;
+
+  @include mobile-only {
+    padding-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  @include tablet-only {
+    padding-top: 59px;
+    margin-bottom: 56px;
+  }
+
+  &__heading {
+    margin: 0 0 25px;
+    text-align: left;
+
+    @include down($bp-desktop) {
+      margin-bottom: 32px;
+    }
+
+    @include tablet-only {
+      margin-bottom: 16px;
+    }
+
+    @include mobile-only {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__kicker {
+    margin: 0 0 6px;
+    color: $accent;
+    font-family: $font-secondary; // "Golos Text"
+    font-size: 14px;
+    font-style: normal;
+    font-weight: $fw-bold; // 700
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  &__title {
+    @include section-heading-title;
+    text-align: left;
+
+    @include mobile-only {
+      font-size: 20px;
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
+    .product-item__favorite {
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+
+      @include mobile-only {
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    @include tablet-only {
+      .product-item {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        .product-item__image-wrap {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 162 / 203;
+          background-color: lightgray;
+        }
+
+        .product-item__image {
+          object-fit: cover;
+          object-position: 50% 50%;
+        }
+
+        .product-item__meta-container--catalog {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-end;
+          align-content: flex-start;
+          column-gap: $space-sm;
+          row-gap: 6px;
+        }
+
+        .product-item__meta-text {
+          display: contents;
+        }
+
+        .product-item__title {
+          flex: 1 0 100%;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .product-item__subtitle-row {
+          flex: 1 1 0;
+          min-width: 0;
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
+
+        .product-item__meta-price {
+          display: flex;
+          flex: 0 0 auto;
+          align-self: flex-end;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+
+        .product-item__meta-price .product-item__wrapper {
+          align-items: flex-end;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    height: auto;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,98 @@
+.breadcrumbs {
+  & > .container {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    /* прокрутка есть, но ползунок скроем */
+    overflow-y: hidden;
+    /* для современных браузеров */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+
+    padding-bottom: 0;
+  }
+}
+.breadcrumbs::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+.breadcrumbs {
+  margin: 24px 0;
+
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+
+  @include down($bp-tablet) {
+    margin: 16px 0;
+  }
+
+  &__home {
+    position: relative;
+    cursor: pointer;
+    color: $accent;
+
+    @include down($bp-tablet) {
+      font-size: 12px;
+    }
+
+    transition: color 0.2s;
+    &:hover {
+      color: $accent;
+    }
+
+    &-svgHouse {
+      position: absolute;
+      top: 6px;
+      left: 7px;
+    }
+  }
+  &__split {
+    color: $text-gray;
+    font-family: $font-secondary;
+    font-size: 10px;
+    font-weight: $fw-semibold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin: 0 8px;
+
+    @include down($bp-desktop) {
+      margin: 0 12px;
+    }
+
+    @include down($bp-tablet) {
+      margin: 0 8px;
+      font-size: 12px;
+    }
+  }
+  &__link {
+    cursor: pointer;
+    color: $text-gray;
+    font-family: $font-secondary;
+    font-size: 10px;
+    font-weight: $fw-semibold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include down($bp-desktop) {
+      font-size: 10px;
+    }
+
+    @include down($bp-tablet) {
+      font-size: 10px;
+    }
+  }
+  &__link:hover,
+  &__link.active {
+    color: $accent;
+  }
+  &__link.active {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+.catalog-page__list-btn {
+  display: none;
+}

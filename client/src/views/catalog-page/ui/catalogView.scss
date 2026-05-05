@@ -1,0 +1,496 @@
+.catalog-view {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+
+    @include down($bp-desktop) {
+      flex-direction: column;
+      gap: 12px;
+
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include down($bp-desktop) {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    h2 {
+      color: $text-gray-dark;
+      font-family: $font-primary;
+      font-size: 48px;
+      font-weight: $fw-semibold;
+
+      @include down($bp-desktop) {
+        font-size: 40px;
+      }
+
+      @include down($bp-tablet) {
+        font-size: 24px;
+      }
+    }
+
+    span {
+      color: $text-gray;
+      font-family: $font-secondary;
+      font-size: 20px;
+      font-weight: $fw-medium;
+
+      @include down($bp-desktop) {
+        font-size: 16px;
+      }
+
+      @include down($bp-tablet) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__controls {
+    position: relative;
+
+    @include down($bp-desktop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+    }
+
+    @include down($bp-desktop) {
+      position: static;
+    }
+
+    @include down($bp-tablet) {
+      gap: 24px;
+    }
+  }
+
+  &__filters-btn {
+    display: none;
+
+    @include down($bp-desktop) {
+      display: inline-flex;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      min-width: 0;
+      height: auto;
+      padding: 8px 32px;
+      gap: 8px;
+      border: none;
+      border-radius: 0;
+      background: var(--Main, #ff99d6);
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      p {
+        margin: 0;
+        color: var(--White, #fefefe);
+        font-family: var(--font-main), "Golos Text", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: $fw-semibold;
+        line-height: normal;
+      }
+    }
+  }
+
+  &__sort-button {
+    display: inline-flex;
+    width: 259px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    gap: $space-xxs;
+
+    border: 1px solid $filter-border-subtle;
+    border-radius: 10px;
+    background: $white;
+
+    @include down($bp-desktop) {
+      width: 243px;
+      height: 32px;
+    }
+
+    @include down($bp-tablet) {
+      width: 100%;
+
+      max-width: 226px;
+      height: 31px;
+    }
+
+    p {
+      color: $text-gray-dark;
+      font-family: $font-secondary;
+      font-size: 14px;
+      font-weight: $fw-semibold;
+
+      @include down($bp-desktop) {
+        font-size: 13px;
+      }
+
+      @include down($bp-tablet) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.catalog-page {
+  .breadcrumbs {
+    margin: $catalog-breadcrumbs-gap-top 0
+      $catalog-breadcrumbs-gap-bottom;
+    border-bottom: none;
+
+    @include tablet-only {
+      margin: 16px 0;
+    }
+
+    & > .container {
+      @include tablet-only {
+        padding-bottom: 0;
+      }
+    }
+
+    .breadcrumbs__link {
+      color: $gray;
+      font-family: $font-secondary;
+      font-size: 10px;
+      font-weight: $fw-semibold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .breadcrumbs__link.active {
+      color: $accent;
+    }
+
+    .breadcrumbs__split {
+      color: $gray;
+      font-family: $font-secondary;
+      font-size: 10px;
+      font-weight: $fw-semibold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+    margin-bottom: $space-md;
+
+    @include tablet-only {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 16px;
+    }
+  }
+
+  &__heading {
+    flex: 1;
+    min-width: min(100%, 280px);
+
+    @include tablet-only {
+      flex: none;
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $dark;
+    font-family: $font-primary;
+    font-size: $catalog-h1-size;
+    font-weight: $fw-bold;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include down($bp-tablet) {
+      padding-bottom: 0;
+      font-size: 20px;
+    }
+  }
+
+  .catalog-view__sort-button {
+    width: auto;
+    min-width: 0;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $space-xs $space-md;
+    border: $catalog-sort-border;
+    border-radius: 0;
+    background: $white;
+    box-sizing: border-box;
+
+    @include tablet-only {
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 280px;
+      margin-left: auto;
+    }
+
+    @include down($bp-tablet) {
+      max-width: 100%;
+    }
+
+    p {
+      margin: 0;
+      color: $dark;
+      font-family: var(--font-main), "Golos Text", sans-serif;
+      font-size: 14px;
+      font-weight: $fw-regular;
+      line-height: 1;
+      letter-spacing: 0;
+      text-align: left;
+
+      @include mobile-only {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__toolbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+    flex-wrap: wrap;
+
+    @include down($bp-desktop) {
+      width: 100%;
+      padding-top: $space-md;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -50vw;
+        width: 100vw;
+        height: 1px;
+        background: rgba(13, 13, 13, 0.2);
+        pointer-events: none;
+      }
+    }
+
+    @include tablet-only {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: $space-md;
+    }
+
+    @include mobile-only {
+      justify-content: space-between;
+    }
+  }
+
+  &__sort {
+    position: relative;
+
+    @include tablet-only {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include desktop-only {
+      .sort-modal {
+        top: calc(100% + #{$space-xs});
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+.active-filter-tags {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-md;
+  margin-bottom: $space-lg;
+  padding: 9px 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background: $active-filter-toolbar-border;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &__panel-label {
+    flex-shrink: 0;
+    color: $active-filter-heading-muted;
+    font-family: $font-primary;
+    font-size: 12px;
+    font-weight: $fw-extrabold;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $space-sm;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+    padding: $space-xs;
+    background: $active-filter-tag-bg;
+    border: none;
+    border-radius: 0;
+  }
+
+  &__body {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25em;
+    min-width: 0;
+  }
+
+  &__title {
+    color: $dark;
+    font-family: var(--font-main), "Golos Text", sans-serif;
+    font-size: $font-size-filter-xs;
+    font-weight: $fw-semibold;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  &__value {
+    color: $dark;
+    font-family: var(--font-main), "Golos Text", sans-serif;
+    font-size: $font-size-filter-xs;
+    font-weight: $fw-medium;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  &__remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+    color: $accent;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__remove-icon {
+    display: block;
+  }
+
+  &__clear {
+    flex-shrink: 0;
+    margin: 0;
+    padding: $space-xs;
+    border: none;
+    border-radius: 0;
+    background: $active-filter-clear-bg;
+    color: $dark;
+    font-family: var(--font-main), "Golos Text", sans-serif;
+    font-size: 9px;
+    font-weight: $fw-medium;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus-visible {
+      background: #9ca3af;
+      color: #fff;
+    }
+  }
+}
+
+.catalog-filters-modal {
+  position: fixed;
+  inset: 0;
+  z-index: $filter-modal-z;
+  background: rgba($dark, 0.4);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  &__content {
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: $filter-sidebar-width 1fr;
+  gap: 48px;
+  align-items: start;
+
+  @include down($bp-desktop) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  &__sidebar {
+    position: sticky;
+    top: $filter-sticky-top;
+  }
+}
+

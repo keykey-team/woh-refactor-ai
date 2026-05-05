@@ -1,0 +1,226 @@
+.catalog-swiper {
+  position: relative;
+  margin: 0;
+
+  :global(.swiper-slide) {
+    height: auto;
+  }
+}
+
+.category-slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 725px;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+
+  @include down($bp-desktop) {
+    height: 420px;
+  }
+
+  @include tablet-only {
+    height: 381px;
+  }
+
+  @include down($bp-tablet) {
+    height: 287px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      $dark-40 0%,
+      $dark-00 100%
+    );
+    pointer-events: none;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    @include down($bp-desktop) {
+      left: $container-padding;
+      bottom: $container-padding;
+    }
+
+    @include down($bp-tablet) {
+      left: 16px;
+      bottom: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $white;
+    font-family: $font-primary;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: $fw-extrabold;
+    line-height: normal;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    @include down($bp-desktop) {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    @include down($bp-tablet) {
+      font-size: 20px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__link {
+    margin: 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    color: $accent;
+    font-family: $font-secondary;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: $fw-semibold;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+
+    @include down($bp-tablet) {
+      font-size: 10px;
+    }
+  }
+
+  &__link-text {
+    flex-shrink: 0;
+  }
+
+  &__link-arrow {
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  @media (hover: hover) {
+    &:hover &__link,
+    &:focus-visible &__link {
+      transform: translateX(8px);
+    }
+  }
+}
+
+.category-marquee {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: $section-pad-y-xl 0;
+  height: 413px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+
+  @include down($bp-desktop) {
+    padding: $section-pad-y-lg 0;
+    height: 241px;
+  }
+
+  @include down($bp-tablet) {
+    padding: $section-pad-y-md 0;
+    height: 100%;
+  }
+
+  &__text {
+    margin: 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: $accent-30;
+    font-family: $font-primary;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: $fw-bold;
+    line-height: normal;
+    letter-spacing: -5px;
+
+    @include down($bp-desktop) {
+      font-size: 100px;
+      letter-spacing: -3px;
+    }
+
+    @include down($bp-tablet) {
+      font-size: 64px;
+      letter-spacing: -2px;
+    }
+  }
+}
+
+.catalog-swiper__section {
+  position: relative;
+  padding: 49px 0 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-image: url("/img/categories-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  @include down($bp-tablet) {
+    padding: $section-pad-y-xs 0 0;
+  }
+
+  .catalog-swiper__controls {
+    display: none !important;
+  }
+
+  .catalog-swiper__wrap {
+    display: flex;
+    align-items: flex-end;
+    max-width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+
+    @include down($bp-tablet) {
+      max-width: 148px;
+    }
+  }
+
+  .catalog-swiper__nav {
+    width: 65px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid $accent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &--prev {
+      transform: rotate(-180deg);
+    }
+  }
+}

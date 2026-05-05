@@ -1,0 +1,11 @@
+.order-page {
+  padding: 0 0 80px;
+
+  @include tablet-only {
+    padding: 0 0 56px;
+  }
+
+  @include down($bp-tablet) {
+    padding: 0 0 48px;
+  }
+}

@@ -1,0 +1,132 @@
+.catalog-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-lg;
+
+  @include tablet-only {
+    gap: 27px;
+  }
+
+  &__button-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    box-sizing: border-box;
+    border: 1px solid var(--Dark, #0d0d0d);
+    border-radius: 0;
+    background: $white;
+    cursor: pointer;
+    max-width: 100%;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+
+    p {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+
+      color: var(--Dark, #0d0d0d);
+      font-family: $font-montserrat;
+      font-size: 14px;
+      font-weight: $fw-medium;
+      letter-spacing: 0.56px;
+      transition: color 0.2s ease;
+
+      @include mobile-only {
+        font-size: 12px;
+      }
+    }
+
+    &:hover {
+      background: var(--Dark, #0d0d0d);
+      border-color: var(--Dark, #0d0d0d);
+
+      p {
+        color: var(--White, #fff);
+      }
+    }
+  }
+
+  &__nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-lg;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__nav-text {
+    text-align: center;
+    font-family: var(--font-main), "Golos Text", sans-serif;
+    font-size: 10px;
+    font-weight: $fw-semibold;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--Dark, #0d0d0d);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $space-xs;
+    transition: color 0.2s ease;
+
+    &:disabled {
+      color: rgba(153, 153, 153, 0.5);
+      cursor: not-allowed;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    min-width: $space-lg;
+    padding: $space-xxs $space-xs;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    transition:
+      border-bottom-color 0.2s ease,
+      color 0.2s ease;
+
+    p {
+      color: rgba(153, 153, 153, 0.5);
+      text-align: center;
+      font-family: var(--font-main), "Golos Text", sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: $fw-semibold;
+      line-height: normal;
+    }
+
+    &:hover:not(.is-active) {
+      p {
+        color: var(--Dark, #0d0d0d);
+      }
+    }
+  }
+
+  &__item.is-active {
+    border-bottom-color: var(--Main, #ff99d6);
+
+    p {
+      color: var(--Dark, #0d0d0d);
+    }
+  }
+
+  &__dots {
+    color: $gray;
+    font-weight: $fw-regular;
+  }
+}

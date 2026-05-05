@@ -1,0 +1,510 @@
+{
+  "title": "Hello",
+  "navigation": {
+    "header": {
+      "catalog": "Catalog",
+      "about": "About us",
+      "content": "Content",
+      "principles": "Principles",
+      "contacts": "Contacts"
+    },
+    "footer": {
+      "catalog": "Product catalog",
+      "aboutUs": "About us",
+      "laboratory": "Laboratory",
+      "library": "Library",
+      "paymentDelivery": "Payment and delivery",
+      "warrantyReturns": "Warranty and returns",
+      "cooperation": "Cooperation"
+    },
+    "burger": {
+      "cooperation": "Partnership"
+    }
+  },
+  "language": {
+    "english": "English",
+    "ukrainian": "Ukrainian"
+  },
+  "Auth": {
+    "errors": {
+      "invalidCredentials": "Invalid phone number or password"
+    }
+  },
+  "auth": {
+    "logoutError": "Failed to log out. Please try again."
+  },
+  "hero": {
+    "slides": {
+      "main": {
+        "title": "Structure.Lab",
+        "lines": [
+          "Science.",
+          "Energy.",
+          "Balance."
+        ]
+      },
+      "second": {
+        "title": "Second slide",
+        "lines": [
+          "Line 1.",
+          "Line 2.",
+          "Line 3."
+        ]
+      }
+    }
+  },
+  "catalogSection": {
+    "title": "Product catalog",
+    "allCatalog": "All products"
+  },
+  "about": {
+    "sectionTitle": "About us",
+    "title": "The “Structure” Manifesto",
+    "text": "Structure Lab is more than a brand — it’s a philosophy that unites science, nature, and discipline into one system for your health and well-being. We believe true beauty begins with balance. Every product we create is designed to help you maintain that balance in every aspect of your life.",
+    "button": "Learn more about us",
+    "imageAlt": "About us"
+  },
+  "contentHub": {
+    "sectionTitle": "Content-hub",
+    "mainCard": {
+      "mainImage": "/img/content-hub-main.jpg",
+      "title": "Evidence base of your beauty",
+      "text": "Structure.Lab R&D center combines molecular biology and nutrition science. Each protocol is the result of thousands of research hours and clinically validated purity standards.",
+      "button": "Laboratory standards"
+    },
+    "cards": {
+      "molecules": {
+        "id": "molecules",
+        "date": "25.12.2025",
+        "title": "Molecular lifting: the role of peptide bonds",
+        "text": "A study of how specific amino acids restore the dermal framework at the DNA level.",
+        "link": "Read article",
+        "tone": "green"
+      },
+      "neuro": {
+        "id": "neuro",
+        "date": "25.12.2025",
+        "title": "Neurobalance and skin: a direct connection",
+        "text": "How stress and cortisol management becomes a key step in appearance care.",
+        "link": "Read article",
+        "tone": "violet"
+      }
+    }
+  },
+  "principles": {
+    "sectionTitle": "Our principles",
+    "cards": {
+      "quality": {
+        "title": "Quality is not marketing. It’s control.",
+        "items": [
+          "Incoming raw materials control (HPLC / LC-MS)",
+          "Production stage control (GMP)",
+          "Final lab analysis of every batch"
+        ],
+        "button": "How we ensure quality"
+      },
+      "system": {
+        "title": "A system that goes beyond the jar.",
+        "items": [
+          "Personalized intake protocols",
+          "Integration with nutrition and lifestyle",
+          "Support from nutrition experts"
+        ],
+        "button": "View catalog"
+      },
+      "care": {
+        "title": "External care as a system booster",
+        "button": "Hair care"
+      },
+      "balance": {
+        "title": "Balance starts with resilience",
+        "button": "Structure Lab Library"
+      }
+    }
+  },
+  "infoBlock": {
+    "title": "Structure Lab — when form follows balance",
+    "text": "Open the catalog or leave your details for a callback. Combinations are explainable. Quality is verified.",
+    "primary": "Open catalog",
+    "secondary": "Request a call"
+  },
+  "footer": {
+    "description": "Premium nutraceuticals created at the intersection of high technology and biological excellence.",
+    "company": "COMPANY",
+    "structure": "STRUCTURE",
+    "contact": "CONTACT",
+    "structures": {
+      "skin": "Skin Structure",
+      "hair": "Hair Structure",
+      "balance": "Balance Structure",
+      "stress": "Stress Structure",
+      "gut": "Gut Structure",
+      "womenMen": "Women / Men / 40+"
+    },
+    "contacts": {
+      "email": "world.of.heelss@gmail.com",
+      "phone": "+38 (093) 718 12 70",
+      "callback": "Request a call"
+    },
+    "bottom": {
+      "copyright": "© 2026 STRUCTURE LAB. All rights reserved",
+      "offer": "Public offer",
+      "privacy": "Privacy policy",
+      "madeBy": "Developed & supported by: KEYKEY"
+    }
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "page": "Page",
+    "prof": "Profile",
+    "order": "Checkout",
+    "cooperation": "Cooperation",
+    "product": "Product"
+  },
+  "cooperationPage": {
+    "heroEyebrow": "World of Heels Ecosystem",
+    "heroTitle": "We grow together",
+    "heroLead": "We create more than footwear — a professional tool for self-expression. Join our partner network.",
+    "cardWholesaleTitle": "Wholesale partners",
+    "cardWholesaleText": "For retailers and dropshippers who value quality and up-to-date design. Flexible purchasing terms and full marketing support.",
+    "cardWholesaleItem1": "Dedicated price list",
+    "cardWholesaleItem2": "Priority dispatch",
+    "cardWholesaleItem3": "Content for promotion",
+    "cardInstructorsTitle": "For instructors",
+    "cardInstructorsText": "You shape dance culture — we equip you and your students with the best gear. Special terms for thought leaders.",
+    "cardInstructorsItem1": "Referral program",
+    "cardInstructorsItem2": "New model testing",
+    "cardInstructorsItem3": "Social media collaborations",
+    "cardsSectionLabel": "Partnership options",
+    "whyTitle": "Why choose us",
+    "why1Index": "01",
+    "why1Title": "Fast logistics",
+    "why1Desc": "Timely delivery across Ukraine and international shipping with full order tracking.",
+    "why2Index": "02",
+    "why2Title": "Quality without compromise",
+    "why2Desc": "Original collections, inspection of every pair, and guaranteed adherence to stated standards.",
+    "why3Index": "03",
+    "why3Title": "Partner ecosystem",
+    "why3Desc": "Dedicated support, marketing assets, and flexible terms for your business.",
+    "why4Index": "04",
+    "why4Title": "Shipping worldwide",
+    "why4Desc": "We have already shipped orders to the USA, Canada, Germany, France, Italy, Spain, and Poland — and this list keeps growing.",
+    "why5Index": "05",
+    "why5Title": "Most competitive prices",
+    "why5Desc": "We offer some of the best prices without unnecessary markups — average savings of 500–1500 UAH per pair.",
+    "whyPaginationAria": "Advantages carousel navigation",
+    "requirementsTitle": "Partner requirements",
+    "requirements1Index": "/01",
+    "requirements1Title": "Sales channel presence",
+    "requirements1Desc": "We look for partners with an engaged audience on social media or physical stores/studios.",
+    "requirements2Index": "/02",
+    "requirements2Title": "Order volumes",
+    "requirements2Desc": "Minimum wholesale order — from 10 pairs across the assortment to receive special pricing.",
+    "ctaTitle": "Ready to get started?",
+    "ctaLead": "Contact our manager on Telegram for the presentation and wholesale price list.",
+    "ctaButton": "Discuss the details"
+  },
+  "wishlist": {
+    "title": "Wishlist",
+    "loadMore": "Show more favorites",
+    "addToWishlist": "Add to wishlist",
+    "removeFromWishlist": "Remove from wishlist",
+    "emptyText": "Your wishlist is empty"
+  },
+  "commerce": {
+    "productItem": {
+      "inCart": "Added to cart",
+      "outOfStock": "Out of stock",
+      "addToCart": "Add to cart"
+    },
+    "cartButton": {
+      "chooseVariant": "CHOOSE VARIANT",
+      "priceOnRequest": "PRICE ON REQUEST",
+      "outOfStock": "OUT OF STOCK",
+      "addToCart": "ADD TO CART",
+      "inCart": "In cart",
+      "restock": "Restocking",
+      "addToCartShort": "Add to cart",
+      "missingProductId": "Product has no unique ID"
+    },
+    "loadError": "Could not load data. Please try again later.",
+    "saleBlockDefaultTitle": "Sale offers",
+    "genericProduct": "Product",
+    "responseCode": "Response code: {code}"
+  },
+  "home": {
+    "saleOffersTitle": "Sale offers",
+    "allCatalogCta": "Full catalog"
+  },
+  "pdp": {
+    "pickVariantHint": "Select options",
+    "groupSkuHint": "Base group SKU: {sku}",
+    "sizeChartTitle": "Size chart",
+    "accessoriesAria": "Accessories",
+    "seriesCategoryAria": "Series and category",
+    "recommendedStripTitle": "RECOMMENDED PRODUCTS",
+    "benefits": {
+      "deliveryTitle": "Delivery",
+      "deliveryText": "Delivery across Ukraine via trusted carriers (Nova Poshta).",
+      "warrantyTitle": "Warranty",
+      "warrantyText": "100% original certified product. Lab quality control for every batch.",
+      "paymentTitle": "Payment",
+      "paymentText": "Online payment by card (Visa/Mastercard) via secure LiqPay."
+    },
+    "gallery": {
+      "openPhoto": "Open photo",
+      "navAria": "Product photo navigation",
+      "thumbsAria": "Thumbnails",
+      "thumbShow": "Show photo {n}"
+    },
+    "block": {
+      "galleryAria": "Product gallery",
+      "infoAria": "Product information and options"
+    },
+    "skeletonAria": "Loading product"
+  },
+  "aria": {
+    "closeMenu": "Close menu",
+    "homeLogo": "Home",
+    "catalogLoading": "Loading catalog",
+    "closeReview": "Close",
+    "sizeTable": "Size table",
+    "reviewRating": "Rating",
+    "carouselPrev": "Previous slide",
+    "carouselNext": "Next slide",
+    "popularList": "Popular products list",
+    "categoryDefault": "Category",
+    "dialogClose": "Close"
+  },
+  "filters": {
+    "modalTitle": "FILTRATION",
+    "closeModal": "Close filters",
+    "selectedHeading": "SELECTED:",
+    "clearFiltersModal": "CLEAR",
+    "showResultsModal": "SHOW",
+    "categories": "CATEGORIES",
+    "subcategories": "SUBCATEGORIES",
+    "targetSystems": "Target systems",
+    "price": "Price, UAH",
+    "priceMinAria": "Minimum price",
+    "priceMaxAria": "Maximum price",
+    "currency": "UAH",
+    "removeFilterAria": "Remove filter",
+    "onlyInStockSection": "Availability",
+    "onlyInStock": "In stock only"
+  },
+  "reviews": {
+    "sectionAria": "Reviews",
+    "paginationAria": "Review slider navigation",
+    "listEmpty": "No reviews yet. Be the first!",
+    "listLoadError": "Could not load reviews",
+    "submitError": "Could not submit your review. Please try again later.",
+    "submitErrorMissingProduct": "Product not found — try refreshing the page.",
+    "datePlaceholder": "—",
+    "nameFallback": "Customer",
+    "textFallback": "No review text",
+    "sentTitle": "Review sent",
+    "sentText": "Your review will appear on the site soon",
+    "modalSubtitle": "Share your experience with the product",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Enter your name",
+    "textLabel": "Your review",
+    "textPlaceholder": "Write your review",
+    "ratingTitle": "Your rating",
+    "submitBtn": "Submit review",
+    "submitError": "Could not submit your review. Please try again.",
+    "submitErrorMissingProduct": "Could not determine the product for this review.",
+    "validation": {
+      "required": "This field is required",
+      "minText": "At least 10 characters",
+      "ratingRequired": "Please select a rating"
+    }
+  },
+  "catalog": {
+    "allProducts": "All products",
+    "products": "products",
+    "filters": "Filters",
+    "sort": "Sort",
+    "sortDefault": "Default",
+    "sortPriceDesc": "Price descending",
+    "sortPriceAsc": "Price ascending",
+    "sortTitleAsc": "By name (A–Z)",
+    "activeFiltersHeading": "Filters:",
+    "clearActiveFilters": "Clear",
+    "catalogTitleAll": "Footwear catalog",
+    "paginationPrev": "Previous",
+    "paginationNext": "Next",
+    "recommendedEyebrow": "OUR SELECTION",
+    "recommendedTitle": "RECOMMENDED PRODUCTS",
+    "loadErrorTitle": "Could not load the catalog",
+    "loadErrorDescription": "A server error occurred while loading products. Please try again or come back later.",
+    "loadErrorRetry": "Try again",
+    "searchResults": "Search results: \"{query}\"",
+    "popularProductsTitle": "Popular products",
+    "carouselCta": "View category",
+    "carouselDemoClothing": "Clothing",
+    "carouselDemoHeels": "High heels",
+    "carouselDemoAccessories": "Accessories",
+    "showMoreWithCount": "Show {count} more products"
+  },
+  "basket": {
+    "basketCount": "Items in basket",
+    "clearConfirm": "Are you sure you want to empty the cart?",
+    "closeAria": "Close cart",
+    "clearAria": "Clear cart",
+    "title": "Shopping cart",
+    "clearButton": "Clear",
+    "emptyText": "Your cart is empty",
+    "startShopping": "Start shopping",
+    "total": "Total:",
+    "checkout": "Checkout",
+    "continueShopping": "Continue shopping",
+    "pricePerUnit": "Price per unit"
+  },
+  "currency": {
+    "uah": "UAH"
+  },
+  "search": {
+    "placeholder": "What are you looking for?",
+    "close": "Close search",
+    "popular": "Popular:"
+  },
+  "authorization": {
+    "loginTitle": "Log in to your account",
+    "regTitle": "Account Registration",
+    "resetTitle": "Password Recovery",
+    "emailLabel": "Email",
+    "emailPlaceholder": "example@mail.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "rememberMe": "Remember me",
+    "newsletter": "I wish to receive news and special offers from the store",
+    "termsPrefix": "By registering, I accept the terms of the",
+    "termsLink": "user agreement",
+    "terms": "By registering, I accept the terms of the user agreement*",
+    "forgotPassword": "Forgot password?",
+    "loginBtn": "Log in",
+    "regBtn": "Register",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+380 (__) ___ __ __",
+    "smsCodeLabel": "SMS code",
+    "smsCodePlaceholder": "Enter SMS code",
+    "sendCodeBtn": "Send code",
+    "restoreBtn": "Restore password",
+    "resetBtn": "Reset password",
+    "newPasswordLabel": "New password",
+    "newPasswordPlaceholder": "Enter a new password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Repeat the new password",
+    "savePasswordBtn": "Save password",
+    "phoneNotFound": "Phone number not found. Please check it or sign up.",
+    "resetTokenMissing": "Could not get a recovery token. Please try again.",
+    "resetPasswordError": "Failed to change password. Please try again.",
+    "recoveryTokenExpired": "The link has expired or the token is invalid. Please try again.",
+    "invalidCode": "Invalid code.",
+    "invalidCodeAttempts": "Invalid code. Attempts remaining: {{count}}",
+    "invalidSmsCode": "Invalid code. Attempts remaining: {{count}}",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginLink": "Log in",
+    "backToLogin": "Back to login",
+    "noAccount": "Don't have an account?",
+    "regLink": "Register",
+    "validation": {
+      "required": "Required field",
+      "invalidEmail": "Invalid email format",
+      "minPassword": "Password must contain at least 6 characters",
+      "acceptTerms": "You must agree to the terms",
+      "passwordsMustMatch": "Passwords must match"
+    }
+  },
+  "checkout": {
+    "contactData": "Contact details",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "delivery": "Delivery",
+    "payment": "Payment",
+    "updateProfile": "Save changes",
+    "npBranch": "Nova Poshta branch",
+    "ukrPoshta": "Ukrposhta",
+    "deliveryMethod": "Delivery method",
+    "chooseDeliveryMethod": "Choose delivery method",
+    "region": "Region",
+    "loading": "Loading…",
+    "chooseRegion": "Choose region",
+    "city": "City",
+    "chooseRegionFirst": "Choose region first",
+    "chooseCity": "Choose city",
+    "chooseCityFirst": "Choose city first",
+    "branch": "Branch",
+    "chooseBranch": "Choose branch",
+    "paymentOnlineTitle": "Online payment",
+    "paymentOnlineDesc": "Card via payment gateway",
+    "paymentPostpaidTitle": "Pay on delivery",
+    "paymentPostpaidDesc": "Cash or card when picking up"
+  },
+  "txt-modal": {
+    "reg": {
+      "title": "Thank you for registering!",
+      "desc": "You can now use your personal account",
+      "btn": "Go to personal account"
+    },
+    "login": {
+      "title": "Thank you for registering!",
+      "desc": "You can now use your personal account",
+      "btn": "Go to personal account"
+    },
+    "reset": {
+      "title": "Password changed",
+      "desc": "You can now log in with your new password.",
+      "btn": "OK"
+    },
+    "logout": {
+      "title": "Sign out",
+      "desc": "Are you sure you want to sign out? You will need to log in again.",
+      "btn": "Stay",
+      "btn2": "Sign out"
+    }
+  },
+  "order-status": {
+    "title": "Your order",
+    "sum": "Subtotal",
+    "delivery": "Delivery",
+    "delivery-ststus": "per carrier rates",
+    "all-cost": "Total",
+    "btn": "Place order",
+    "promoPlaceholder": "Enter promo code",
+    "promoApply": "Apply"
+  },
+  "delivery": {
+    "novaPoshtaAreasErrorMessage": "Failed to load Nova Poshta regions. Please try again later.",
+    "novaPoshtaCitiesErrorMessage": "Failed to load Nova Poshta cities. Please try again later.",
+    "novaPoshtaWarehousesErrorMessage": "Failed to load Nova Poshta branches. Please try again later."
+  },
+  "profile": {
+    "title-prof": "Your System",
+    "title-history": "Protocol Archive",
+    "subtitle-prof": "WELCOME, {name}",
+    "subtitle-history": "your order history",
+    "guestName": "Guest",
+    "noOrders": "You don't have any orders yet",
+    "updateSuccess": "Profile updated successfully",
+    "updateError": "Error updating profile",
+    "orderNotFound": "Order not found",
+    "backToOrders": "Back to order history",
+    "link1": "personal information",
+    "link2": "order history",
+    "link3": "log out"
+  },
+  "notFound": {
+    "title": "404 page",
+    "line1": "Step into",
+    "line2": "the unknown.",
+    "description": "This page does not exist, but your perfect balance\nawaits on the site's home page.",
+    "cta": "Back to home"
+  }
+}

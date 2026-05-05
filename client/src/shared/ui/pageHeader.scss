@@ -1,0 +1,62 @@
+.page-header {
+  .breadcrumbs {
+    margin: 16px 0;
+    border-bottom: none;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+    margin-bottom: $space-lg;
+    padding-bottom: $space-lg;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      border-bottom: 1px solid rgba(13, 13, 13, 0.2);
+      pointer-events: none;
+    }
+
+    @include tablet-only {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 16px;
+    }
+
+    @include down($bp-tablet) {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $dark;
+    font-family: $font-primary;
+    font-size: $catalog-h1-size;
+    font-weight: $fw-bold;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    word-break: break-word;
+
+    @include tablet-only {
+      font-size: 24px;
+    }
+
+    @include down($bp-tablet) {
+      padding-bottom: 0;
+      font-size: 20px;
+    }
+  }
+}
+

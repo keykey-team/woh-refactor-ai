@@ -1,0 +1,18 @@
+import Cookies from "js-cookie";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+import { fetchCartFromDB } from "../Cart/lib/CartSlice";
+
+export function DataLoader() {
+  const dispatch = useDispatch();
+  const id = Cookies.get("profile_id");
+
+  useEffect(() => {
+    if (id) {
+      dispatch(fetchCartFromDB(id));
+    }
+  }, [dispatch, id]);
+
+  return null;
+}

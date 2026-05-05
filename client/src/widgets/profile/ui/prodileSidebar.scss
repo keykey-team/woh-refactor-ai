@@ -1,0 +1,174 @@
+.profile-container {
+    width: 100%;
+    max-width: 1548px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+    margin-bottom: clamp(80px, 12vw, 300px);
+    display: flex;
+    gap: 24px;
+    @include down($bp-desktop-narrow) {
+        flex-direction: column;
+        gap: 32px;
+    }
+    @include down($bp-tablet) {
+        padding: 0 8px;
+        gap: 24px;
+        margin-bottom: 48px;
+    }
+    .profile-content {
+        width: 75%;
+        @include down($bp-desktop-narrow) {
+            width: 100%;
+        }
+    }
+    .profile-wrapper {
+        border-radius: 20px;
+        background: var(--White, #FEFEFE);
+        padding: 40px;
+    }
+    .profile-sidebar {
+        height: 620px;
+        min-width: 357px;
+        width: 25%;
+        border-radius: 0;
+        padding: 24px 40px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: #fff;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 82px;
+        @include down($bp-desktop-narrow) {
+            width: 100%;
+            align-items: center;
+            gap: 40px;
+        }
+        @include tablet-only {
+            padding: 24px;
+            height: auto;
+            min-width: 0;
+        }
+        @include down($bp-tablet) {
+            padding: 24px;
+            height: auto;
+            min-width: 0;
+            gap: 32px;
+        }
+        .logo-svg {
+            margin: 0 auto;
+            width: 151px;
+            height: 60px;
+            aspect-ratio: 151 / 60;
+        }
+        &__nav {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            @include down($bp-tablet) {
+                gap: 24px;
+            }
+            @include tablet-only {
+                gap: 24px;
+                align-items: center;
+                text-align: center;
+            }
+            @include down($bp-tablet) {
+                align-items: center;
+                text-align: center;
+            }
+        }
+        &__nav-item {
+            display: flex;
+            gap: 12px;
+            cursor: pointer;
+            align-items: center;
+            color: var(--Dark, #0D0D0D);
+            font-family: "Golos Text";
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            // Force icons to match link color (even with hardcoded fills in SVG)
+            path {
+                fill: currentColor !important;
+            }
+
+            &.active {
+                color: var(--Main, #FF99D6);
+            }
+
+            &--logout {
+                color: var(--Gray, #9CA3AF);
+                font-weight: 700;
+            }
+
+            @include tablet-only {
+                justify-content: center;
+            }
+            @include down($bp-tablet) {
+                justify-content: center;
+            }
+        }
+
+        &__logout-arrow {
+            color: var(--Gray, #9CA3AF);
+            font-family: "Golos Text";
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+    }
+    .profile-page {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @include tablet-only {
+            gap: 16px;
+        }
+        @include down($bp-tablet) {
+            gap: 16px;
+        }
+        &__prev {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-left: 24px;
+            @include down($bp-desktop-narrow) {
+                text-align: center;
+                padding-left: 0;
+            }
+            @include tablet-only {
+                gap: 16px;
+            }
+            @include down($bp-tablet) {
+                gap: 8px;
+            }
+        }
+        &__subtitle {
+            color: var(--Main, #FF99D6);
+            font-family: "Golos Text";
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            @include down($bp-tablet) {
+                font-size: 12px;
+            }
+        }
+        &__title {
+            color: var(--Dark, #0D0D0D);
+            font-family: "Golos Text";
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            @include down($bp-tablet) {
+                font-size: 24px;
+            }
+        }
+    }
+}

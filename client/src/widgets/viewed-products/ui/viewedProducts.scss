@@ -1,0 +1,27 @@
+.viewed-products {
+  padding-top: 0;
+  margin: 80px 0;
+
+  @include tablet-only {
+    margin: 56px 0;
+  }
+
+  @include mobile-only {
+    margin: 48px 0;
+  }
+
+  &__swiper {
+    overflow: visible;
+    cursor: pointer;
+
+    &:active {
+      cursor: pointer;
+    }
+  }
+
+  /* Узгоджено з кліком по картці: без «руки» grab на тексті метаданих */
+  .product-item {
+    cursor: pointer;
+  }
+}
+

@@ -1,0 +1,41 @@
+.submit-review-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--Dark, #0d0d0d);
+  color: var(--White, #fff);
+  font-family: $font-montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: $fw-bold;
+  line-height: normal;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($accent, 0.55);
+    outline-offset: 2px;
+  }
+
+  p {
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+  }
+}

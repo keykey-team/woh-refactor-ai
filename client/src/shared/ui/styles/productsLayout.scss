@@ -1,0 +1,51 @@
+.products-layout-wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  > .footer {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+
+    display: none;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+}
+
+.products-layout-wrapper:not(.products-layout-wrapper--footer)::before {
+  display: block;
+  background-image: url("/img/categories-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 160px $accent-10;
+}
+
+.products-layout-wrapper--footer {
+  @include tablet-only {
+    margin-top: 56px;
+  }
+}

@@ -1,0 +1,438 @@
+.contacts-page {
+  padding-bottom: 80px;
+
+  @include down($bp-desktop) {
+    padding-bottom: 0px;
+  }
+
+  @include mobile-only {
+    padding-bottom: 48px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 24px;
+    align-items: start;
+    margin-top: 24px;
+
+    @include down($bp-desktop) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @include mobile-only {
+      margin-top: 16px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile-only {
+      gap: 12px;
+    }
+  }
+
+  &__social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  &__card {
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #FFF;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 24px;
+    transition: border-color 160ms ease, background-color 160ms ease;
+
+    &:not(.contacts-page__card--form):hover {
+      border: 1px solid var(--Main, #FF99D6);
+      background: rgba(254, 254, 254, 0.80);
+    }
+  }
+
+  &__card--social {
+    @include mobile-only {
+      padding: 16px;
+    }
+  }
+
+  &__card--link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 153, 214, 0.7);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      border-color: var(--Main, #FF99D6);
+      background: rgba(254, 254, 254, 0.80);
+    }
+  }
+
+  &__card-title {
+    margin: 0 0 20px;
+    color: var(--Dark, #0D0D0D);
+    font-family: $font-montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+
+    @include mobile-only {
+      font-size: 24px;
+      margin: 0 0 64px;
+    }
+  }
+}
+
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include mobile-only {
+    gap: 16px;
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__field--source {
+    @include down($bp-desktop) {
+      display: none;
+    }
+  }
+
+  &__label {
+    color: #9ca3af;
+    font-family: $font-secondary;
+    font-size: 20px;
+    font-weight: $fw-regular;
+    line-height: normal;
+    letter-spacing: 0;
+  }
+
+  &__label--accent {
+    color: $accent;
+  }
+
+  &__input,
+  &__textarea,
+  &__select {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #9CA3AF;
+    padding: 0 0 8px 0;
+    background: transparent;
+    outline: none;
+    color: $text-gray-dark;
+    font-family: $font-secondary;
+    font-size: 16px;
+    font-weight: $fw-regular;
+
+    &:focus {
+      border-bottom-color: #FF99D6;
+    }
+
+    &:focus-visible {
+      border-bottom-color: #FF99D6;
+    }
+  }
+
+  &__input::placeholder,
+  &__textarea::placeholder {
+    color: var(--Gray, #9CA3AF);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 1;
+  }
+
+  &__field--floating {
+    padding-bottom: 45px;
+  }
+
+  &__field--floating &__input,
+  &__field--floating &__textarea {
+    padding-top: 10px;
+  }
+
+  &__field &__input + &__label,
+  &__field &__textarea + &__label {
+    position: absolute;
+    left: 0;
+    bottom: 55px;
+    pointer-events: none;
+    transform-origin: left top;
+    transition: transform 160ms ease, color 160ms ease, font-size 160ms ease, font-weight 160ms ease;
+  }
+
+  &__field &__input:focus + &__label,
+  &__field &__input:not(:placeholder-shown) + &__label,
+  &__field &__textarea:focus + &__label,
+  &__field &__textarea:not(:placeholder-shown) + &__label {
+    transform: translateY(-45px);
+    color: var(--Main, #FF99D6);
+    font-family: "Golos Text";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: none;
+  }
+
+  &__textarea {
+    resize: none;
+    min-height: 48px;
+    padding: 16px 0 8px 0;
+
+    @include down($bp-desktop) {
+      padding: 0 0 8px 0;
+      min-height: 40px;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    pointer-events: none;
+    color: var(--Gray, #9CA3AF);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0;
+    transition: opacity 120ms ease;
+  }
+
+  &__textarea:placeholder-shown + &__placeholder {
+    opacity: 1;
+  }
+
+  &__select {
+    padding-bottom: 10px;
+  }
+
+  &__select--sr {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    height: 1px;
+    width: 1px;
+  }
+
+  &__dropdown {
+    position: relative;
+  }
+
+  &__select--custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--Dark, #0D0D0D);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__select-icon {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 10px;
+    border-right: 2px solid #0D0D0D;
+    border-bottom: 2px solid #0D0D0D;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    opacity: 0.75;
+  }
+
+  &__options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 6px);
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+    padding: 6px 0;
+    margin: 0;
+    list-style: none;
+    z-index: 20;
+  }
+
+  &__option {
+    width: 100%;
+    padding: 10px 12px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    color: var(--Dark, #0D0D0D);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 153, 214, 0.50);
+      outline: none;
+    }
+  }
+
+  &__submit {
+    align-self: flex-start;
+    padding: 10px 18px;
+    background: var(--Main, #FF99D6);
+    box-shadow: 0 10px 20px -10px rgba(255, 153, 214, 0.50);
+    border: 0;
+    cursor: pointer;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @include mobile-only {
+      align-self: stretch;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($accent, 0.55);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--White, #FFF);
+      background: rgba(255, 153, 214, 0.50);
+      box-shadow: none;
+    }
+  }
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include mobile-only {
+    gap: 8px;
+  }
+
+  &__chip {
+    display: inline-flex;
+    width: fit-content;
+    align-self: flex-start;
+    padding: 8px 16px;
+    border: 1px solid rgba($accent, 0.35);
+    color: $accent;
+    font-family: $font-montserrat;
+    font-size: 16px;
+    font-weight: $fw-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12px;
+
+    @include mobile-only {
+      font-size: 10px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__value {
+    margin: 0;
+    color: var(--Dark, #0D0D0D);
+    font-family: $font-montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    word-break: break-word;
+
+    @include mobile-only {
+      font-size: 20px;
+    }
+  }
+
+  &__hint {
+    margin: 0;
+    color: var(--Gray, #9CA3AF);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include mobile-only {
+      font-size: 14px;
+    }
+  }
+}
+
+.contacts-page__card--social .contacts-info {
+  gap: 24px;
+  align-items: center;
+
+  @include mobile-only {
+    gap: 12px;
+  }
+}
+
+.contacts-page__card--social .contacts-info__chip {
+  align-self: center;
+}
+
+.contacts-page__card--social .contacts-info__value {
+  color: var(--Text-color-1, #0F172A);
+  font-family: $font-montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0;
+  text-align: center;
+
+  @include down($bp-desktop) {
+    font-size: 28px;
+  }
+
+  @include mobile-only {
+    font-size: 16px;
+  }
+}
+
+.contacts-page__card--wide .contacts-info {
+  align-items: flex-start;
+}
+

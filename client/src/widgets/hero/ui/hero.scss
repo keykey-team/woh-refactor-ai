@@ -1,0 +1,442 @@
+@keyframes hero-skeleton-pulse {
+  0% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.55;
+  }
+}
+
+.hero-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  &.section-margin {
+    margin-bottom: 0;
+  }
+
+  &--skeleton {
+    pointer-events: none;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  align-items: start;
+  justify-items: stretch;
+
+  &--skeleton {
+    display: block;
+    min-height: 480px;
+    background-color: $hero-slide-placeholder;
+
+    @include down($bp-desktop) {
+      min-height: 312px;
+    }
+
+    @include down($bp-tablet) {
+      min-height: 200px;
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+
+    /* Fade: неактивні слайди лишаються у стеку з opacity 0 і блокують hover — лише активний ловить події */
+    .swiper-slide:not(.swiper-slide-active) {
+      pointer-events: none !important;
+    }
+
+    .swiper-slide-active {
+      pointer-events: auto;
+    }
+  }
+
+  /* Кнопка поза Swiper — поверх усіх шарів fade; «ghost» тримає висоту під активний слайд */
+  &__cta-layer {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 30;
+    align-self: stretch;
+    min-height: 0;
+    pointer-events: none;
+
+    @include down($bp-tablet) {
+      display: none;
+    }
+  }
+
+  &__cta-layer-inner {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  &__cta-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  &__cta-ghost {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__cta-live {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    pointer-events: none;
+  }
+
+  &__cta-live .hero__actions {
+    pointer-events: auto;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    height: auto;
+    background-color: $hero-slide-placeholder;
+
+    @include down($bp-desktop) {
+      min-height: 312px;
+    }
+
+    @include down($bp-tablet) {
+      min-height: 200px;
+    }
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &__media-link,
+  &__media-static {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+  }
+
+  &__media-img-wrap {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  &__media-img {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+
+    &--mobile {
+      display: none;
+    }
+
+    @include down($bp-tablet) {
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__skeleton-banner {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      110deg,
+      rgba($dark, 0.06) 0%,
+      rgba($dark, 0.12) 45%,
+      rgba($dark, 0.06) 90%
+    );
+    animation: hero-skeleton-pulse 1.2s ease-in-out infinite;
+  }
+
+  &__container--skeleton {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__skeleton-chip {
+    width: 180px;
+    height: 12px;
+    border-radius: 2px;
+    background-color: rgba($dark, 0.08);
+    animation: hero-skeleton-pulse 1.2s ease-in-out infinite;
+  }
+
+  &__skeleton-title {
+    width: min(72vw, 520px);
+    height: clamp(36px, 8vw, 72px);
+    margin-top: 16px;
+    border-radius: 4px;
+    background-color: rgba($dark, 0.08);
+    animation: hero-skeleton-pulse 1.2s ease-in-out infinite;
+
+    &--short {
+      width: min(48vw, 320px);
+      margin-top: 12px;
+    }
+  }
+
+  &__skeleton-button {
+    width: 200px;
+    height: 52px;
+    margin-top: 24px;
+    border-radius: 0;
+    background-color: rgba($accent, 0.25);
+    animation: hero-skeleton-pulse 1.2s ease-in-out infinite;
+
+    @include down($bp-tablet) {
+      display: none;
+    }
+  }
+
+  &__pagination--skeleton {
+    pointer-events: none;
+  }
+
+  &__skeleton-bullet {
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    border-radius: 0;
+    background-color: rgba($dark, 0.12);
+    animation: hero-skeleton-pulse 1.2s ease-in-out infinite;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    padding: 120px $container-padding 179px;
+
+    @include down($bp-desktop) {
+      padding: 30px $container-padding 56px;
+    }
+
+    @include down($bp-tablet) {
+      padding: 47px 16px 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $container-padding;
+    pointer-events: auto;
+
+    @include down($bp-tablet) {
+      gap: 8px;
+    }
+  }
+
+  &__kicker {
+    margin: 0;
+    color: $accent;
+    font-family: $font-secondary;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: $fw-bold;
+    line-height: normal;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+    @include down($bp-desktop) {
+      font-size: 10px;
+    }
+
+    @include down($bp-tablet) {
+      color: $accent;
+      font-family: $font-secondary;
+      font-size: 6px;
+      font-weight: $fw-bold;
+      letter-spacing: 4px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $dark;
+    font-family: $font-primary;
+    font-size: 160px;
+    font-style: normal;
+    font-weight: $fw-bold;
+    line-height: 90%;
+    letter-spacing: -10px;
+    text-transform: uppercase;
+    display: inline-block;
+
+    @include down($bp-desktop) {
+      font-size: 80px;
+      letter-spacing: -5px;
+    }
+
+    @include down($bp-tablet) {
+      color: $dark;
+      font-size: 40px;
+      letter-spacing: -2px;
+    }
+  }
+
+  &__title-accent {
+    display: block;
+    margin-top: 0;
+    line-height: 90%;
+
+    @include down($bp-desktop) {
+      font-size: 80px;
+      letter-spacing: -5px;
+    }
+
+    @include down($bp-tablet) {
+      color: $accent;
+      font-family: $font-primary;
+      font-size: 40px;
+      font-weight: $fw-bold;
+      letter-spacing: -2px;
+    }
+  }
+
+  &__accent {
+    display: block;
+
+    &--1 {
+      color: $accent;
+    }
+
+    &--2 {
+      color: $accent-green;
+    }
+
+    &--3 {
+      color: $accent-violet;
+    }
+
+    @include down($bp-tablet) {
+      &--1,
+      &--2,
+      &--3 {
+        color: $accent;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $container-padding;
+  }
+
+  &__button {
+    display: inline-flex;
+    padding: 20px 48px;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    align-self: flex-start;
+    border: none;
+    border-radius: 0;
+    background: $accent;
+    transition: background-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: color-mix(in srgb, $accent 70%, white);
+    }
+
+    @include down($bp-desktop) {
+      padding: 16px 48px;
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    @include down($bp-tablet) {
+      display: none;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: $dark;
+    text-align: center;
+    font-family: $font-primary;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: $fw-bold;
+    line-height: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    @include down($bp-desktop) {
+      font-size: 8px;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+    pointer-events: auto;
+  }
+
+  &__bullet {
+    width: 40px;
+    height: 2px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: $dark;
+    transition:
+      width 0.25s ease,
+      background-color 0.25s ease;
+
+    &.is-active {
+      width: 80px;
+      background-color: $accent;
+    }
+  }
+}

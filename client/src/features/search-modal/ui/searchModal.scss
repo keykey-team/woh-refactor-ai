@@ -1,0 +1,256 @@
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* Вище за .header (z-index: 100), щоб поле пошуку та результати не перехоплювались хедером на мобільних */
+  z-index: 120;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: -40px;
+    right: -100px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 0;
+    color: #0d0d0d;
+
+    &:hover {
+      color: #ff99d6;
+    }
+
+    &:active {
+      transform: none;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+
+      @include down($bp-tablet) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    @include down($bp-desktop) {
+      position: fixed;
+      top: clamp(160px, 12vh, 260px);
+      right: 24px;
+    }
+
+    @include down($bp-tablet) {
+      width: 15px;
+      height: 15px;
+      top: 120px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+    padding-top: 88px;
+
+    background: #fffbfe;
+
+    @include down($bp-tablet) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 738px;
+    padding: 0;
+    position: relative;
+
+    @include down($bp-desktop) {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 24px;
+    }
+
+    @include down($bp-tablet) {
+      padding: 0 16px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    position: relative;
+
+    border-radius: 5px;
+
+    @include down($bp-tablet) {
+      width: 100%;
+      gap: 16px;
+
+      margin-top: 47px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 107px;
+
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-left: 0;
+
+    color: #0d0d0d;
+    font-family: "Montserrat", sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: normal;
+
+    background-image: linear-gradient(
+      to bottom,
+      transparent calc(100% - 2px),
+      var(--Main, #ff99d6) calc(100% - 2px),
+      var(--Main, #ff99d6) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &:focus {
+      background-image: linear-gradient(
+        to bottom,
+        transparent calc(100% - 2px),
+        var(--Main, #ff99d6) calc(100% - 2px),
+        var(--Main, #ff99d6) 100%
+      );
+    }
+
+    @include down($bp-desktop) {
+      height: 86px;
+      font-size: 48px;
+    }
+
+    @include down($bp-tablet) {
+      font-size: 36px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &::placeholder {
+      color: rgba(13, 13, 13, 0.5);
+      font-size: 64px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      line-height: normal;
+
+      @include down($bp-desktop) {
+        font-size: 48px;
+      }
+
+      @include down($bp-tablet) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__popular {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    @include down($bp-tablet) {
+      gap: 12px;
+    }
+  }
+
+  &__popular-label {
+    color: rgba(153, 153, 153, 0.5);
+    font-family: "Golos Text", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+
+    @include down($bp-tablet) {
+      font-size: 20px;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    @include down($bp-tablet) {
+      gap: 12px;
+    }
+  }
+
+  &__tag {
+    padding: 8px 16px;
+
+    border-radius: 0;
+    background: rgba(153, 153, 153, 0.5);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    p {
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+
+      @include down($bp-tablet) {
+        font-size: 12px;
+      }
+    }
+
+    @include down($bp-tablet) {
+      border-radius: 0;
+    }
+
+    &--active {
+      background-color: #ff99d6;
+
+      p {
+        color: #ffffff;
+      }
+    }
+
+    &:hover {
+      background-color: #ff99d6;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

@@ -1,0 +1,237 @@
+.not-found-page {
+  padding-bottom: 80px;
+
+  &__container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+
+    @include down($bp-tablet) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__inner {
+    box-sizing: border-box;
+    max-width: 792px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 56px;
+  }
+
+  &__code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__digit {
+    color: #000;
+    font-family: $font-montserrat;
+    font-size: 250px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -10px;
+  }
+
+  &__code > &__digit:first-child,
+  &__code > &__digit:last-child {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 62%;
+      left: 78%;
+      z-index: 1;
+      width: 2px;
+      height: 127px;
+      transform: translate(-50%, -50%);
+      background: var(--Main, #FF99D6);
+      pointer-events: none;
+    }
+  }
+
+  &__zero {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    height: 175px;
+    border: 1px solid var(--Gray, #9CA3AF);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__zero-dot {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background: var(--Main, #ff99d6);
+  }
+
+  &__line1 {
+    margin: 0 0 4px;
+    color: var(--Dark, #0d0d0d);
+    text-align: center;
+    font-family: $font-montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  &__line2 {
+    margin: 0 0 24px;
+    color: var(--Main, #ff99d6);
+    text-align: center;
+    font-family: $font-montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    margin-bottom: 40px;
+    color: var(--Gray, #9ca3af);
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: pre-line;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 40px;
+    background: var(--Dark, #0d0d0d);
+    color: var(--White, #fff);
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background: var(--Main, #ff99d6);
+      color: var(--White, #fff);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba($accent, 0.6);
+      outline-offset: 3px;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  @include down($bp-desktop) {
+    padding-bottom: 24px;
+
+    &__line1,
+    &__line2 {
+      font-size: 48px;
+    }
+
+    &__line2 {
+      margin: 0 0 16px;
+    }
+
+    &__desc {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+
+    &__cta {
+      font-size: 18px;
+    }
+  }
+
+  @include mobile-only {
+    padding-bottom: 48px;
+
+    &__inner {
+      padding-top: 40px;
+    }
+
+    &__line1,
+    &__line2 {
+      font-size: 40px;
+    }
+
+    &__line2 {
+      margin: 0 0 12px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+
+    &__cta {
+      align-self: stretch;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    &__digit {
+      font-size: 160px;
+    }
+
+    &__zero {
+      width: 112px;
+      height: 112px;
+    }
+
+    &__zero-dot {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__code > &__digit:first-child,
+    &__code > &__digit:last-child {
+      &::after {
+        width: 1px;
+        height: 82px;
+      }
+    }
+  }
+}
+
+.not-found-page-shell {
+  min-height: 40vh;
+}

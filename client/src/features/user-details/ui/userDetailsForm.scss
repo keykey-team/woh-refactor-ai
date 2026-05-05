@@ -1,0 +1,423 @@
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+    max-width: 100%;
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    // Typography for entered/selected values in form controls
+    input,
+    select,
+    textarea {
+        color: var(--Dark, #0D0D0D);
+        font-family: "Golos Text";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        border-radius: 0;
+        @include down($bp-tablet) {
+            font-size: 14px;
+        }
+    }
+    input::placeholder,
+    textarea::placeholder {
+        @include down($bp-tablet) {
+            font-size: 14px;
+        }
+    }
+    label {
+        color: #9CA3AF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        @include down($bp-tablet) {
+            font-size: 12px;
+        }
+    }
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        min-width: 0;
+        @include down($bp-tablet) {
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .num {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 1000px;
+            background: var(--Accent-color-1, #ff99d6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--White, #FEFEFE);
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            @include down($bp-tablet) {
+                display: none;
+            }
+            @include tablet-only {
+                display: none;
+            }
+        }
+        span {
+            flex: 1 1 0%;
+            min-width: 0;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            color: var(--Dark, #0D0D0D);
+            font-family: Montserrat;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            @include tablet-only {
+                font-size: 32px;
+            }
+            @include down($bp-tablet) {
+                font-size: 24px;
+            }
+        }
+    }
+    &__group {
+        margin-bottom: 24px;
+        min-width: 0;
+        max-width: 100%;
+        border-radius: 0;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: #fff;
+        backdrop-filter: blur(5px);
+        padding: 40px;
+        @include tablet-only {
+            margin-bottom: 16px;
+            padding: 24px 32px;
+        }
+        @include down($bp-tablet) {
+            margin-bottom: 16px;
+            padding: 24px;
+        }
+    }
+
+    &--profile {
+        .user-details__profile-title {
+            display: none;
+        }
+
+        // Tablet/mobile: visually merge groups into one card
+        @include tablet-only {
+            .user-details__profile-title {
+                display: block;
+                margin: 0 0 24px;
+                color: var(--Dark, #0D0D0D);
+                font-family: Montserrat;
+                font-size: 32px;
+                font-weight: 700;
+            }
+            .user-details__groups {
+                border: 1px solid rgba(15, 23, 42, 0.08);
+                background: #fff;
+                backdrop-filter: blur(5px);
+                padding: 24px 32px;
+            }
+            .user-details__group {
+                border: 0;
+                background: transparent;
+                backdrop-filter: none;
+                padding: 0;
+                margin-bottom: 16px;
+            }
+            .user-details__group:last-child {
+                margin-bottom: 0;
+            }
+            .user-details__head {
+                display: none;
+            }
+        }
+
+        @include down($bp-tablet) {
+            .user-details__profile-title {
+                display: block;
+                margin: 0 0 16px;
+                color: var(--Dark, #0D0D0D);
+                font-family: Montserrat;
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+            }
+            .user-details__groups {
+                border: 1px solid rgba(15, 23, 42, 0.08);
+                background: #fff;
+                backdrop-filter: blur(5px);
+                padding: 24px;
+            }
+            .user-details__group {
+                border: 0;
+                background: transparent;
+                backdrop-filter: none;
+                padding: 0;
+                margin-bottom: 16px;
+            }
+            .user-details__group:last-child {
+                margin-bottom: 0;
+            }
+            .user-details__head {
+                display: none;
+            }
+        }
+    }
+    &__form-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+        &.width {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        @include tablet-only {
+            gap: 16px;
+        }
+        @include down($bp-tablet) {
+            gap: 16px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+    }
+    .submit-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 24px;
+        border-radius: 0;
+        background: var(--Main, #FF99D6);
+        box-shadow: 0 10px 20px -10px rgba(255, 153, 214, 0.50);
+        color: var(--White, #FFF);
+        text-align: center;
+        font-family: "Golos Text";
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+.custom-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    .error{
+        position: absolute;
+        top: 100%;
+        right: 0;    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: red;
+    }
+}
+
+.user-details .custom-select-wrapper {
+    @include down($bp-tablet) {
+        .react-select__single-value,
+        .react-select__placeholder {
+            font-size: 14px !important;
+        }
+        .react-select__input-container input {
+            font-size: 14px !important;
+        }
+        .react-select__option {
+            font-size: 14px !important;
+        }
+    }
+}
+.special-label {
+    display: none;
+}
+.react-tel-input .form-control {
+    padding: 16px !important;
+    width: 100% !important;
+    height: 53px !important;
+    border-radius: 0 !important;
+    color: var(--Dark, #0D0D0D) !important;
+    font-family: "Golos Text" !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+}
+.flag-dropdown {
+    display: none !important;
+}
+.marg {
+    margin-left: 40px;
+}
+
+@include tablet-only {
+    .user-details {
+        .submit-button {
+            padding: 16px 64px;
+            margin-top: 24px;
+        }
+    }
+    .marg {
+        margin-left: 0;
+    }
+}
+
+@include down($bp-tablet) {
+    .user-details {
+        .submit-button {
+            padding: 16px 64px;
+            margin-top: 16px;
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+    .marg {
+        margin-left: 0;
+    }
+}
+.pay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+    max-width: 100%;
+    &__option {
+        cursor: pointer;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        border-radius: 0;
+        border: 1px solid var(--Main, #FF99D6);
+        background: rgba(255, 153, 214, 0.10);
+        padding: 24px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: 0.3s;
+        &:hover {
+            transition: 0.3s;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+        &.active {
+            background: rgba(255, 153, 214, 0.10);
+        }
+        @include down($bp-tablet) {
+            padding: 16px;
+            gap: 8px;
+        }
+    }
+    .delivery__header {
+        min-width: 0;
+        max-width: 100%;
+    }
+    &__title {
+        display: block;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        color: var(--Text-color-1, #0F172A);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        @include down($bp-tablet) {
+            color: var(--Dark, #0D0D0D);
+            font-family: "Golos Text";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+    }
+    &__desc {
+        max-width: 100%;
+        margin: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        color: var(--Gray, #9CA3AF);
+        font-family: "Golos Text";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .error-text {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        font-family: $font-secondary;
+        color: red;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+/* Checkout (order): mobile body text 16px for readability */
+.user-details.user-details--order {
+    @include down($bp-tablet) {
+        input,
+        select,
+        textarea {
+            font-size: 16px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        .submit-button {
+            font-size: 16px;
+        }
+
+        .pay__title {
+            font-size: 18px;
+        }
+
+        .pay__desc {
+            font-size: 16px;
+        }
+    }
+}
+
+.user-details.user-details--order .custom-select-wrapper {
+    @include down($bp-tablet) {
+        .react-select__single-value,
+        .react-select__placeholder {
+            font-size: 16px !important;
+        }
+
+        .react-select__input-container input {
+            font-size: 16px !important;
+        }
+
+        .react-select__option {
+            font-size: 16px !important;
+        }
+    }
+}
