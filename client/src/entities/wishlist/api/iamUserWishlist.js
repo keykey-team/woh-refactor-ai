@@ -1,6 +1,5 @@
+import { resolvePublicApiUrl } from "@shared";
 import Cookies from "js-cookie";
-
-import { resolvePublicApiUrl } from "../../../lib/resolvePublicApiUrl";
 
 const API_URL = resolvePublicApiUrl(process.env.NEXT_PUBLIC_API_URL || "");
 

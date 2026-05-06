@@ -1,5 +1,5 @@
 "use client"
-import { clearCartAsync, getCartData } from "@shared";
+import { clearCartAsync } from "@entities/cart";
 import { DELIVERY_TYPES } from '@features/user-details/const/delivery';
 import { createAuthorizedCheckout,createGuestCheckout } from '@shared/api/orderServices';
 import { MODALS } from '@shared/config/modals';

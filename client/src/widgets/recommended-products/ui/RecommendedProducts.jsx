@@ -3,7 +3,7 @@
 import "swiper/css";
 
 import ProductItem from "@entities/product";
-import WishlistButton from "@features/wish-buttons";
+import WishlistButton from "@features/toggle-wishlist";
 import { BREAKPOINTS, normalizeCatalogCardForProductItem } from "@shared";
 import { CATALOG_GRID_PRIORITY_IMAGE_COUNT } from "@shared/api/productsServices";
 import { useParams } from "next/navigation";

@@ -1,8 +1,5 @@
-import {
-  toggleWishlistAsync,
-  useI18n,
-  wishlistContainsGroupForProduct,
-} from "@shared";
+import { toggleWishlistAsync, wishlistContainsGroupForProduct } from "@entities/wishlist";
+import { WISHLIST_CLICK_DEBOUNCE_MS } from "@shared";
 import debounce from "lodash.debounce";
 import { useParams } from "next/navigation";
 import {
@@ -16,8 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getWishlistProductId } from "../lib/getWishlistProductId";
 
-const WISHLIST_CLICK_DEBOUNCE_MS = 400;
-
 export function useToggleWishlistButton({
   product,
   productId: productIdProp,
@@ -27,7 +22,6 @@ export function useToggleWishlistButton({
   const dispatch = useDispatch();
   const params = useParams();
   const locale = params?.locale ?? "ua";
-  const { t } = useI18n();
 
   const wishlistItems = useSelector(
     (state) => state?.wishlist?.items ?? [],
@@ -81,7 +75,9 @@ export function useToggleWishlistButton({
       setLocalBusy(true);
       try {
         await dispatch(toggleWishlistAsync(payload)).unwrap();
-      } catch {} finally {
+      } catch (error) {
+        console.warn("[wishlist] toggle failed", error);
+      } finally {
         inFlightRef.current = false;
         setLocalBusy(false);
       }

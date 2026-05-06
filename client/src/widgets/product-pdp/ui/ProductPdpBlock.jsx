@@ -1,8 +1,7 @@
 "use client";
 
 import ProductGallery from "@widgets/product-gallery";
-import ProductInfo from "@widgets/product-info";
-import { collectGallerySlides } from "@widgets/product-info/lib/pdpVariations";
+import ProductInfo, { collectGallerySlides } from "@widgets/product-info";
 import { useCallback, useMemo, useState } from "react";
 
 export default function ProductPdpBlock({

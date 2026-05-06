@@ -1,3 +1,4 @@
+export { resetCartMergeSession } from "./model/lib/cartMergeSession";
 export {
   addToCart,
   addToCartAsync,
@@ -13,6 +14,5 @@ export {
   incrementQuantityAsync,
   removeFromCart,
   removeFromCartAsync,
-} from "@shared";
-
-export { default } from "@shared/redux/Cart/lib/CartSlice";
+} from "./model/slice/cartSlice";
+export { default } from "./model/slice/cartSlice";

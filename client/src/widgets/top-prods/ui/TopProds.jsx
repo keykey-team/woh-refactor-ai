@@ -3,7 +3,7 @@
 import ProductItem from "@entities/product";
 import CartButton from "@features/cart-buttons";
 import Counter from "@features/counter";
-import WishlistButton from "@features/wish-buttons";
+import WishlistButton from "@features/toggle-wishlist";
 import { BREAKPOINTS } from "@shared/index";
 import {
   Swiper,

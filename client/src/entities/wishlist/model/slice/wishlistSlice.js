@@ -5,13 +5,13 @@ import {
   deleteIamUserWishlistLine,
   fetchIamUserWishlist,
   postIamUserWishlistAdd,
-} from "../api/iamUserWishlist";
+} from "../../api/iamUserWishlist";
 import {
   collectWishlistGroupIdsFromItems,
   serverWishlistGroupIdSet,
   wishlistItemGroupId,
   wishlistRowKey,
-} from "./wishlistGroupId";
+} from "../lib/wishlistGroupId";
 
 const toggleFlightLocks = new Set();
 

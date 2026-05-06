@@ -1,6 +1,6 @@
+import AppProviders from "../providers";
 import NotFoundPage from "views/not-found-page";
 import {
-  AppProviders,
   createI18nServer,
   getAllCategory,
   getLocalizedFooter,

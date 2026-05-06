@@ -1,7 +1,7 @@
 "use client";
 
 import ProductItem from "@entities/product";
-import WishlistButton from "@features/wish-buttons";
+import WishlistButton from "@features/toggle-wishlist";
 import { BREAKPOINTS, getViewedProducts } from "@shared";
 import { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";

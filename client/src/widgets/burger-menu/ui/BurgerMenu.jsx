@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguageSwitcher } from "@features/language-switcher/model/useLanguageSwitcher";
+import { useLanguageSwitcher } from "@features/language-switcher";
 import MainNav, {
   AccountIcon,
   ArrowMoreIcon,
@@ -10,10 +10,10 @@ import MainNav, {
   FavoriteProductIcon,
   LanguageSwitcher,
   Logo,
+  MODALS,
+  SocialLinks,
+  useI18n,
 } from "@shared";
-import { MODALS } from "@shared/config/modals";
-import { useI18n } from "@shared/i18n/use-i18n";
-import SocialLinks from "@shared/ui/SocialLinks";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -44,8 +44,7 @@ const BurgerMenu = ({
     },
   ];
   const { t } = useI18n();
-  const { currentLocale, isOpen, onSelect } =
-    useLanguageSwitcher();
+  const { onSelect } = useLanguageSwitcher();
   const isOpenModal = isModalOpen === MODALS.BURGER;
   const [isCatalogOpen, setIsCatalogOpen] =
     useState(false);
@@ -135,16 +134,15 @@ const BurgerMenu = ({
               </h3>
 
               <ul className="lang-dropdown__list">
-                {LANGS.map(
-                  ({ locales, labelKey, code, Icon, index }) => (
-
-                    <li key={index} onClick={() => onSelect(locales)} className={locales !== locale ? "lang-dropdown__item" : "lang-dropdown__item active"}>
-                      <p>{code}</p>
-                    </li>
-
-
-                  ),
-                )}
+                {LANGS.map(({ locales, code, index }) => (
+                  <li
+                    key={index}
+                    onClick={() => onSelect(locales)}
+                    className={locales !== locale ? "lang-dropdown__item" : "lang-dropdown__item active"}
+                  >
+                    <p>{code}</p>
+                  </li>
+                ))}
               </ul>
 
             </div>

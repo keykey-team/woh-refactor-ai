@@ -1,11 +1,15 @@
-import MainNav, { CloseBtn, Logo, getAllFilters } from "@shared";
-import { getLocalizedNavigation } from "@shared/config/navItems";
-import { getMessages } from "@shared/i18n/getMessages";
-import { createI18nServer } from "@shared/i18n/server";
+import MainNav, {
+  CloseBtn,
+  createI18nServer,
+  getAllFilters,
+  getLocalizedNavigation,
+  getMessages,
+  Logo,
+} from "@shared";
 import Link from "next/link";
 
 import HeaderActions from "./HeaderActions";
-import AuthModal from "@widgets/auth-modal/ui/AuthModal";
+import AuthModal from "@widgets/auth-modal";
 import MegaMenu from "./MegaMenu";
 
 
